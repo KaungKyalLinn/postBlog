@@ -1,0 +1,341 @@
+:root{
+  --primary-color: #fff;
+  --secondary-color: rgba(0, 0, 255, 0.6);
+  --assend-color: rgba(0, 0, 150, 0.7);
+  --assend-color-2: #9EC8B9;
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--assend-color);
+}
+body{
+  background-color: var(--primary-color);
+}
+h1{
+  font-size: 2.3rem;
+}
+h2{
+  font-size: 1.7rem;
+}
+p{
+  font-size: 1rem;
+}
+.container{
+  width: 100vw;
+  margin: 0 auto;
+}
+.page{
+  width: 97%;
+  min-height: 700px;
+  max-height: 100vh;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.centerPage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer{
+  width: 100%;
+  height: 300px;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.form input{
+  width: 450px;
+  border: 2px solid rgba(0, 0, 255, 0.6);
+  padding: 10px 20px;
+  margin: 0 0 15px 0;
+}
+.form input:focus{
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}
+.btn{
+  width: 170px;
+  height: 35px;
+  cursor: pointer;
+}
+/* navbar start */
+.navBar{
+  width: 100vw;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 5px var(--secondary-color);
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+.navHalf{
+  width: 50%;
+}
+.navLogo{
+  color: var(--primary-color);
+}
+.navUl{
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.navLink{
+  display: inline-block;
+  text-decoration: none;
+  color: var(--primary-color);
+  padding: 5px 10px;
+}
+.navLink:hover{
+  border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+}
+.logoutBtn{
+  width: 90px;
+  background-color: rgba(0, 0, 255, 0.3);
+  color: #efefef;
+  border: 2px solid #efefef;
+  border-radius: 4px;
+}
+.logoutBtn:hover{
+  color: var(--secondary-color);
+  background-color: #efefef;
+}
+.logoutBtn:active{
+  color: #fff;
+  background-color: #333;
+}
+/* navbar end */
+
+/* home screen start */
+.heroPage{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.introPage{
+  display: flex;
+  border-top: 2px solid var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+}
+.introHalf{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.introLeft{
+  background-color: var(--secondary-color);
+}
+.introP{
+  color: var(--primary-color);
+}
+.introRight{
+  background-color: var(--primary-color);
+}
+.homeFooter{
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 0 0;
+}
+.homeFooter div{
+  width: 96%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  background-color: var(--secondary-color);
+  padding: 0 0 0 50px;
+}
+.white{
+  color: white;
+}
+/* home screen end */
+
+/* sign in page start */
+.loginPage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loginDiv{
+  border: 2px solid var(--secondary-color);
+  padding: 20px;
+}
+.loginForm{
+  margin: 30px 0 0 0;
+}
+.loginBtn{
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+.loginBtn:hover{
+  background-color: var(--assend-color);
+}
+.loginBtn:active{
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+}
+.toRegister{
+  text-align: center;
+  margin: 20px 0 0 0;
+}
+.toRegisterLink{
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+.toRegisterLink:hover{
+  color: var(--assend-color);
+}
+/* sign in page end */
+
+/* sign up page start */
+.registerPage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.registerDiv{
+  border: 2px solid var(--secondary-color);
+  padding: 20px;
+}
+.registerForm{
+  margin: 30px 0 0 0;
+}
+/* sign up page end */
+
+/* dashboard page start */
+.dashboardPage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+}
+.dashboardHalf{
+  min-height: 700px;
+  max-height: 100vh;
+  padding: 10% 0 0 0;
+}
+.dashboardLeftHalf{
+  width: 20%;
+}
+.dashboardRightHalf{
+  width: 40%;
+}
+.dashboardForm{
+  width: 100%;
+  height: 100%;
+}
+.creating{
+  color: rgba(0, 255, 0, 0.6);
+}
+.updating{
+  color: var(--secondary-color);
+}
+#blogName{
+  width: 100%;
+}
+#blogBody{
+  padding: 30px;
+  margin: 0 0 30px 0;
+}
+.editBar{
+  text-align: right;
+  padding: 10px;
+  color: #333;
+}
+.editIcons{
+  cursor: pointer;
+  margin: 0 10px 0 0;
+}
+.backToForm{
+  text-decoration: none;
+}
+/* dashboard page end */
+
+/* blog list start */ 
+.blogPage{
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+.theBlog{
+  border: 2px solid var(--secondary-color);
+  padding: 20px;
+  margin: 40px 0 0 0;
+}
+.theBlogBody{
+  font-size: 1.1rem;
+  margin: 20px 0;
+}
+/* blog list end */ 
+
+/* user blog list page start */
+.userBlogListPage{
+  width: 97%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+/* user blog list page end */
+
+/* profile page start */
+.profilePage{
+  margin-top: 80px;
+  height: 87vh;
+  padding: 0 35px;
+}
+.profileSection{
+  display: flex;
+}
+.profileHalf{
+  width: 50%;
+  height: 490px;
+  padding: 10% 20px 0 20px;
+}
+.blogOverview{
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--secondary-color);
+  padding: 20px;
+  overflow: hidden;
+  margin: 20px 0 0 0;
+}
+.overview{
+  border-bottom: 2px solid var(--secondary-color);
+  margin: 0 0 10px 0;
+}
+.profileP{
+  margin: 20px 0 40px 0;
+}
+.profileEditBar{
+  display: flex;
+  gap: 20%;
+}
+.profileIcons{
+  height: 100%;
+  padding: 10px 15px;
+  border: 1px solid var(--secondary-color);
+  text-align: center;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+.profileIcons:hover{
+  background-color: var(--secondary-color);
+}
+.profileIcons p{
+  font-size: 1.3rem;
+}
+
+/* profile page end */
