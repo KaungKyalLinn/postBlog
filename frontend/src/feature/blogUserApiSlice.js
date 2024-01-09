@@ -32,7 +32,7 @@ export const blogUserApiSlice = apiSlice.injectEndpoints({
         url : url + "/logout",
         method : "POST",
       }),
-      // invalidatesTags : ["blogUser"]
+      invalidatesTags : ["blogUser"]
     })
   })
 })
