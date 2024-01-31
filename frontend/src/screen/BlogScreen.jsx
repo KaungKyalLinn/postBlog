@@ -2,7 +2,7 @@ import TheBlog from "../component/TheBlog";
 import { useGetBlogsQuery } from "../feature/readBlogApi";
 
 const BlogScreen = () => {
-  const {data : blogs, isLoading, isSuccess} = useGetBlogsQuery();
+  const {data : blogs, isLoading} = useGetBlogsQuery();
 
   if(isLoading){
     return(

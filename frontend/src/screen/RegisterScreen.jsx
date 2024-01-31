@@ -60,19 +60,20 @@ const RegisterScreen = () => {
   return (
     <>
       <div className="page registerPage">
+        <div className="bgCover bgCoverTwo"></div>
         <div className="registerDiv">
           <h1 className="registerTitle">Sign up</h1>
           <form className="form registerForm" onSubmit={loginBlogUser}>
-            <label htmlFor="name">Name :</label>
+            <label htmlFor="name">Name</label>
             <input type="text" id="name" name="name" required value={blogUser.name} onChange={dataChange}/>
 
-            <label htmlFor="email">Email :</label>
+            <label htmlFor="email">Email</label>
             <input type="text" id="email" name="email" required value={blogUser.email} onChange={dataChange}/>
 
-            <label htmlFor="password">Password :</label>
+            <label htmlFor="password">Password</label>
             <input type="password" id="password" name="password" required value={blogUser.password} onChange={dataChange}/>
 
-            <label htmlFor="password2">Confirm Password :</label>
+            <label htmlFor="password2">Confirm Password</label>
             <input type="password" id="password2" name="password2" required value={blogUser.password2} onChange={dataChange}/>
 
             <button className="btn loginBtn">Sign in</button>

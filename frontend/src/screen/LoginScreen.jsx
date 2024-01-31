@@ -50,12 +50,13 @@ const LoginScreen = () => {
   return (
     <>
       <div className="page loginPage">
+      <div className="bgCover"></div>
         <div className="loginDiv">
           <h1 className="signInTitle">Sign in</h1>
           <form className="form loginForm" onSubmit={loginBlogUser}>
-            <label htmlFor="name">Email :</label>
+            <label htmlFor="name">Email</label>
             <input type="text" id="name" name="email" required value={blogUser.email} onChange={dataChange}/>
-            <label htmlFor="password">Password :</label>
+            <label htmlFor="password">Password</label>
             <input type="password" id="password" name="password" required value={blogUser.password} onChange={dataChange}/>
             <button className="btn loginBtn">Sign in</button>
           </form>

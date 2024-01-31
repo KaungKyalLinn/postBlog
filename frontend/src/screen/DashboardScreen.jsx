@@ -92,17 +92,23 @@ const DashboardScreen = () => {
     <>
       <div className="page dashboardPage" id="dashboard">
         <div className="dashboardHalf dashboardLeftHalf">
-          <div className="form dashboardForm">
-            <label htmlFor="blogName">Blog Title : </label>
-            <input type="text" id="blogName" name="blogName" required value={blogData.blogName} onChange={blogDataChange}/>
-          </div>
           <h2 className={condition}>{condition}</h2>
+          <div className="blogHub">
+            {blogs && blogs.map((blog) => {
+              return(<p className="blogHubTitle" key={blog._id}>{blog.blogName}</p>)
+            })}
+          </div>
         </div>
         <div className="dashboardHalf dashboardRightHalf">
-          <div className="form dashboardForm">
-            <label htmlFor="blogBody">: </label>
+            <div className="form dashboardForm">
+
+            <label htmlFor="blogName">Blog Title</label>
+            <input type="text" id="blogName" name="blogName" required value={blogData.blogName} onChange={blogDataChange}/>
+
+            <label htmlFor="blogBody">Blog Body</label>
             <textarea name="blogBody" id="blogBody" cols="30" rows="15" value={blogData.blogBody} onChange={blogDataChange}></textarea>
             <button className="btn postBlogBtn" onClick={postingBlog}>Post</button>
+
           </div>
         </div>
       </div>
