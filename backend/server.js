@@ -21,7 +21,9 @@ if(process.env.NODE_ENV === "production"){
     res.sendFile(path.join(__dirname, "../frontend/build/index.html"))
   })
 }else{
-  res.send("please make sure in production")
+  app.get("*", (req, res) => {
+    res.send("please make sure in production");
+  })
 }
 
 app.use(errorHandling.notFoundError)

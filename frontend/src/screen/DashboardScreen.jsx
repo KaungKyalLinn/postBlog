@@ -2,7 +2,7 @@ import { useSelector } from "react-redux"
 import { toast } from "react-toastify";
 import { useState } from "react";
 import { useDeleteBlogMutation, useGetUserBlogQuery, usePostBlogMutation, useUpdateBlogMutation } from "../feature/blogPostApiSlice";
-import { FaTrash, FaEdit } from "react-icons/fa"
+import { FaTrash, FaEdit } from "react-icons/fa";
 
 
 const DashboardScreen = () => {
@@ -95,7 +95,7 @@ const DashboardScreen = () => {
           <h2 className={condition}>{condition}</h2>
           <div className="blogHub">
             {blogs && blogs.map((blog) => {
-              return(<p className="blogHubTitle" key={blog._id}>{blog.blogName}</p>)
+              return(<a className="blogHubTitle" key={blog._id} href={"#" + blog._id}>{blog.blogName}</a>)
             })}
           </div>
         </div>
@@ -117,7 +117,7 @@ const DashboardScreen = () => {
           <div>
             {blogs.map((blog) => {
               return(
-                <div key={blog._id} className="theBlog">
+                <div key={blog._id} className="theBlog" id={blog._id}>
                   <div className="editBar">
                     <a href="#dashboard" className="backToForm">
                       <FaEdit className="editIcons" onClick={() => {prepareForEdit(blog._id, blog.blogName, blog.blogBody)}}/>

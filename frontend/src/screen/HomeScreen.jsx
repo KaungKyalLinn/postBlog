@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import fullSuitMan2 from "../images/full_suit_man_2.jpg";
-import fullSuitMan3 from "../images/full_suit_man_3.jpg";
 import { useGetBlogsQuery } from "../feature/readBlogApi";
 import { FaCheck, FaUserShield, FaLock} from "react-icons/fa";
+import fullSuitMan2 from "../images/full_suit_man_2.jpg";
+import fullSuitMan3 from "../images/full_suit_man_3.jpg";
 
 const HomeScreen = () => {
   const {data : blogs} = useGetBlogsQuery();
@@ -24,11 +24,11 @@ const HomeScreen = () => {
                 <h3 className="theBlogTitle">{blogs[0].blogName}</h3>
                 <p className="theBlogPara">by - {blogs[0].author}</p>
               </div>
-              <div className="recentBlog">
+              <div className="recentBlog laterBlog">
                 <h3 className="theBlogTitle">{blogs[1].blogName}</h3>
                 <p className="theBlogPara">by - {blogs[1].author}</p>
               </div>
-              <div className="recentBlog">
+              <div className="recentBlog laterBlog">
                 <h3 className="theBlogTitle">{blogs[2].blogName}</h3>
                 <p className="theBlogPara">by - {blogs[2].author}</p>
               </div>
@@ -72,7 +72,7 @@ const HomeScreen = () => {
           </div>
         </div>
         <div className="offerInfo">
-          <h3>We store user's blogs in save place and user can use our platform safely for free for unlimit post.</h3>
+          <h3>blogs are in save place and user can use our platform safely for free for unlimit post.</h3>
         </div>
       </div>
       <div className="footer homeFooter">

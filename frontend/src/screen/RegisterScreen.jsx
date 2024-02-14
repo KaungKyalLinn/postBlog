@@ -59,7 +59,7 @@ const RegisterScreen = () => {
 
   return (
     <>
-      <div className="page registerPage">
+      <div className="registerPage">
         <div className="bgCover bgCoverTwo"></div>
         <div className="registerDiv">
           <h1 className="registerTitle">Sign up</h1>

@@ -5,6 +5,10 @@
   --assend-color-2: rgba(0, 0, 0, 0.4);
   --assend-color-3: #eaeaea;
   --assend-color-4: #F4BF96;
+  --6-col: 50%;
+}
+body{
+  background-color: var(--assend-color);
 }
 *{
   padding: 0;
@@ -12,9 +16,6 @@
   box-sizing: border-box;
   font-family: 'Assistant', sans-serif;
   color: var(--secondary-color);
-}
-body{
-  background-color: var(--assend-color);
 }
 h1{
   font-size: 2.3rem;
@@ -36,9 +37,7 @@ p{
 }
 .page{
   width: 100%;
-  height: 100vh;
-  margin: 0 auto;
-  padding: 0 10px;
+  height: 700px;
 }
 .centerPage{
   display: flex;
@@ -66,6 +65,9 @@ p{
   width: 170px;
   height: 35px;
   cursor: pointer;
+}
+.active{
+  border-bottom: 2px solid rgba(255, 255, 255, 0.7);
 }
 /* navbar start */
 .navBar{
@@ -108,6 +110,21 @@ p{
 .logoutBtn:active{
   background-color: var(--primary-color);
 }
+.menu{
+  width: 70px;
+  height: 70px;
+  position: relative;
+  z-index: 5;
+  display: none;
+  cursor: pointer;
+}
+.menuStick{
+  width: 80%;
+  height: 12%;
+  border-radius: 10px;
+  background-color: var(--assend-color-3);
+  transition: transform 300ms ease-out;
+}
 /* navbar end */
 
 /* home screen start */
@@ -124,7 +141,7 @@ p{
   overflow: hidden;
 }
 .bgCover{
-  width: 100%;
+  width: 100vw;
   height: 100%;
   background-color: var(--assend-color-2);
   position: absolute;
@@ -143,6 +160,9 @@ p{
   justify-content: center;
   align-items: center;
   gap: 10px;
+}
+.heroTitle, .heroSubTitle{
+  text-align: center;
 }
 .toBlogBtn{
   text-decoration: none;
@@ -196,7 +216,7 @@ p{
   background-color: var(--assend-color-2);
 }
 .introHalf{
-  width: 50%;
+  width: var(--6-col);
 }
 .introLeft{
   position: relative;
@@ -243,8 +263,8 @@ p{
   justify-content: center;
 }
 .theOffer div{
-  width: 40%;
-  height: 40%;
+  width: 220px;
+  height: 220px;
   background-color: var(--assend-color-2);
   display: flex;
   flex-direction: column;
@@ -286,6 +306,8 @@ p{
 
 /* sign in page start */
 .loginPage{
+  width: 100vw;
+  height: 100vh;
   background-image: url("./images/blog_user.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -330,7 +352,8 @@ p{
 
 /* sign up page start */
 .registerPage{
-  height: 120vh;
+  width: 100vw;
+  height: 1000px;
   background-image: url("./images//blog_user.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -340,7 +363,7 @@ p{
 }
 .bgCoverTwo{
   width: 100vw;
-  height: 120vh;
+  height:1000px;
 }
 .registerDiv{
   position: relative;
@@ -378,6 +401,8 @@ p{
   padding: 20px;
 }
 .blogHubTitle{
+  display: block;
+  text-decoration: none;
   border-bottom: 1px solid black;
   padding: 10px 5px;
   color: var(--primary-color);
@@ -475,13 +500,14 @@ p{
   display: flex;
 }
 .profileHalf{
-  width: 50%;
+  width: var(--6-col);
   height: 490px;
   padding: 10% 20px 0 20px;
 }
 .blogOverview{
   width: 100%;
   height: 100%;
+  overflow-y: auto;
   border: 2px solid var(--secondary-color);
   padding: 20px;
   overflow: hidden;
@@ -514,3 +540,145 @@ p{
 }
 
 /* profile page end */
+
+/*responsive start*/
+@media screen and (max-width: 900px){
+  :root{
+    --6-col: 100%;
+  }
+  h1, h2, h3, p{
+    text-align: center;
+  }
+  h3{
+    font-size: 1.3rem;
+  }
+  .page:not(.heroPage, .loginPage, .registerPage){
+    height: 1200px;
+  }
+  .heroPage, .loginPage, .bgCover{
+    height: 100vh;
+  }
+  .registerPage, .bgCoverTwo{
+    height: 1000px;
+  }
+  /* navbar responsive start */
+  .navRightHalf{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 20px;
+  }
+  .menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+  }
+  .ulWrap{
+    width: 300px;
+    height: 500px;
+    background-color: var(--assend-color-2);
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+  }
+  .activeUlWrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .navUl{
+    width: 100%;
+    padding: 40px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .navLi{
+    width: 80%;
+  }
+  .navLink{
+    display: block;
+    /* padding: 20px; */
+  }
+  .animateStickOne{
+    transform: rotate(45deg) scale(0.8) translateY(27px);
+  }
+  .animateStickTwo{
+    transform: scale(0);
+  }
+  .animateStickThree{
+    transform: rotate(-45deg) scale(0.8) translateY(-27px);
+  }
+  /* navbar responsive end */
+  /* home page responsive start */
+  .laterBlog{
+    display: none;
+  }
+  .introPage{
+    flex-direction: column;
+  }
+  .introLeft{
+    height: 80%;
+  }
+  .introRight{
+    height: 20%;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 30px;
+  }
+  .introImgOneDiv{
+    top: 30%;
+  }
+  .introImgTwoDiv{
+    top: 48%;
+  }
+  .introLegend{
+    text-align: center;
+  }
+  .offerPage{
+    height: 1300px;
+  }
+  .offerDiv{
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  .recentBlogsDiv{
+    justify-content: center;
+  }
+  .homeFooter div{
+    padding: 0;
+  }
+  /* home page responsive end */
+  /* dashboard page responsive start */
+  .dashboardPage{
+    flex-direction: column;
+  }
+  .dashboardLeftHalf, .dashboardRightHalf{
+    width: 100%;
+    height: 50%;
+  }
+  .postBlogBtn{
+    margin: 0 auto;
+  }
+  /* dashboard page responsive end */
+  /* profile page responsive start */
+  .profileSection{
+    flex-direction: column;
+  }
+  /* profile page responsive end */
+}
+@media screen and (max-width: 450px) and (min-width: 280px){
+  .form input{
+    width: 80vw;
+  }
+  .loginDiv{
+    padding: 20px 10px;
+  }
+  .introLeft{
+    overflow-x: hidden;
+  }
+}

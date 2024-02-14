@@ -1,13 +1,26 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useLogoutMutation } from "../feature/blogUserApiSlice";
 import { toast } from "react-toastify";
 import { clearCredential } from "../feature/blogUserSlice";
+import { useRef } from "react";
 
 const Nav = () => {
   const user = useSelector(state => state.blogUser);
   const [logout, {isloading}] = useLogoutMutation();
   const dispatch = useDispatch();
+
+  const ulWrap = useRef(null);
+  const menuStickOne = useRef(null);
+  const menuStickTwo = useRef(null);
+  const menuStickThree = useRef(null);
+
+  const menuClick = () => {
+    ulWrap.current.classList.toggle("activeUlWrap");
+    menuStickOne.current.classList.toggle("animateStickOne");
+    menuStickTwo.current.classList.toggle("animateStickTwo");
+    menuStickThree.current.classList.toggle("animateStickThree");
+  }
 
   const activateLogout = async () => {
     try{
@@ -34,40 +47,45 @@ const Nav = () => {
           <h1 className="navLogo">post blog</h1>
         </div>
       </div>
-      {user.blogUser ? (
-      <div className="navHalf">
-        <ul className="navUl">
-          <li className="navLi">
-            <Link className="navLink" to="/">home</Link>
-          </li>
-          <li className="navLi">
-            <Link className="navLink" to="/blog">blog</Link>
-          </li>
-          <li className="navLi">
-            <Link className="navLink" to="/user/profile">profile</Link>
-          </li>
-          <li className="navLi">
-            <button className="btn logoutBtn" onClick={activateLogout}>logout</button>
-          </li>
-        </ul>
-      </div>
-      ) : (
-        <div className="navHalf">
-          <ul className="navUl">
-            <li className="navLi">
-              <Link className="navLink" to="/">home</Link>
-            </li>
-            <li className="navLi">
-              <Link className="navLink" to="/blog">blog</Link>
-            </li>
-            <li className="navLi">
-              <Link className="navLink" to="/user/login">sign in</Link>
-            </li>
-          </ul>
+      <div className="navHalf navRightHalf">
+        <div className="ulWrap" ref={ulWrap}>
+          {user.blogUser ? (
+            <ul className="navUl">
+              <li className="navLi">
+                <NavLink className="navLink" to="/">home</NavLink>
+              </li>
+              <li className="navLi">
+                <NavLink className="navLink" to="/blog">blog</NavLink>
+              </li>
+              <li className="navLi">
+                <NavLink className="navLink" to="/user/profile">profile</NavLink>
+              </li>
+              <li className="navLi">
+                <button className="btn logoutBtn" onClick={activateLogout}>logout</button>
+              </li>
+            </ul>
+          ) : (
+            <ul className="navUl">
+              <li className="navLi">
+                <NavLink className="navLink" to="/">home</NavLink>
+              </li>
+              <li className="navLi">
+                <NavLink className="navLink" to="/blog">blog</NavLink>
+              </li>
+              <li className="navLi">
+                <NavLink className="navLink" to="/user/login">sign in</NavLink>
+              </li>
+            </ul>
+          )}
         </div>
-      )}
+        <div className="menu" onClick={menuClick}>
+          <span className="menuStick" ref={menuStickOne}></span>
+          <span className="menuStick" ref={menuStickTwo}></span>
+          <span className="menuStick" ref={menuStickThree}></span>
+        </div>
+      </div>
     </nav>
   )
 }
 
-export default Nav
+export default Nav;

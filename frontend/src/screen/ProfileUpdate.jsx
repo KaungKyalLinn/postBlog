@@ -11,7 +11,7 @@ const ProfileUpdate = () => {
     name : blogUser ? blogUser.name : "",
     password : ""
   })
-  const [update, {isLoading, isSuccess}] = useUpdateMutation();
+  const [update, {isLoading}] = useUpdateMutation();
   const dispatch = useDispatch();
 
   const userDataChange = (e) => {

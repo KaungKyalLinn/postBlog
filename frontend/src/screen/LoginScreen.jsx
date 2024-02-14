@@ -49,7 +49,7 @@ const LoginScreen = () => {
 
   return (
     <>
-      <div className="page loginPage">
+      <div className="loginPage">
       <div className="bgCover"></div>
         <div className="loginDiv">
           <h1 className="signInTitle">Sign in</h1>
